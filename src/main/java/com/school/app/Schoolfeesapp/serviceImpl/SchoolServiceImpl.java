@@ -1,12 +1,9 @@
 package com.school.app.Schoolfeesapp.serviceImpl;
 
-import com.school.app.Schoolfeesapp.POJO.Parent;
 import com.school.app.Schoolfeesapp.POJO.School;
-
 import com.school.app.Schoolfeesapp.constents.ParentConstants;
 import com.school.app.Schoolfeesapp.dao.SchoolDao;
-
-import com.school.app.Schoolfeesapp.service.TheSchoolService;
+import com.school.app.Schoolfeesapp.service.SchoolService;
 import com.school.app.Schoolfeesapp.utils.ParentUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +14,9 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 import java.util.Objects;
 
-
 @Slf4j
 @Service
-public class TheSchoolServiceImpl implements TheSchoolService {
+public class SchoolServiceImpl implements SchoolService {
 
     @Autowired
     SchoolDao schoolDao;

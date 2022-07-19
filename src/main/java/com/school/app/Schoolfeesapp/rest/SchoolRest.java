@@ -8,11 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Map;
 
 @RequestMapping(path="/school")
-public interface TheSchoolRest {
-
+public interface SchoolRest {
     @PostMapping(path="/signup")
     public ResponseEntity<String> signUp(@RequestBody(required = true) Map<String, String> requestMap);
-
-
 
 }

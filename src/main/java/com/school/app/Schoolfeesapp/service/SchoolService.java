@@ -4,6 +4,6 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
 
-public interface TheSchoolService {
+public interface SchoolService {
     ResponseEntity<String> signUp(Map<String, String> requestMap);
 }
