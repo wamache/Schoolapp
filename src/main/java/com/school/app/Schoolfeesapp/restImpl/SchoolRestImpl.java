@@ -27,8 +27,15 @@ public class SchoolRestImpl implements SchoolRest {
         return ParentUtils.getResponseEntity(ParentConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-//    @Override
-//    public ResponseEntity<String> signUp(Map<String, String> requestMap) {
-//        return null;
-//    }
+    @Override
+    public ResponseEntity<String> login(Map<String, String> requestMap) {
+        try {
+            return schoolService.login(requestMap);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
+        return ParentUtils.getResponseEntity(ParentConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 }
