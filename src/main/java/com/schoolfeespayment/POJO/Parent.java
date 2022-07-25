@@ -3,7 +3,6 @@ package com.schoolfeespayment.POJO;
 //import lombok.AllArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -13,7 +12,7 @@ import java.io.Serializable;
 
 
 @NamedQuery(name= "Parent.findByEmailId", query="select p from Parent p where p.email=:email")
-@NamedQuery(name= "Parent.getAllParent", query="select new com.school.app.Schoolfeesapp.wrapper.ParentWrapper(p.id,p.firstName,p.lastName,p.userName,p.idNumber,p.email, p.contactNumber, p.status ) from Parent p where p.role='parent'")
+@NamedQuery(name= "Parent.getAllParent", query="select new com.schoolfeespayment.wrapper.ParentWrapper(p.id,p.firstName,p.lastName,p.userName,p.idNumber,p.email, p.contactNumber, p.status ) from Parent p where p.role='parent'")
 
 
 @NamedQuery(name = "Parent.updateStatus", query = "update Parent p set p.status=:status where p.id=:id ")
@@ -23,7 +22,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "parent")
+@Table(name="parent")
 public class Parent implements Serializable {
 
     private static final long serialVersionUID =1L;
@@ -62,11 +61,11 @@ public class Parent implements Serializable {
 
     @Column(name="status")
     private String status;
-
-    @Column(name = "verification_code", length = 64)
-    private String verificationCode;
-
-    private boolean enabled;
+//
+//    @Column(name = "verification_code", length = 64)
+//    private String verificationCode;
+//
+//    private boolean enabled;
 
 
 

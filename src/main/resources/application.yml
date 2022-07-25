@@ -17,3 +17,23 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         format_sql: true
     show-sql: true
+
+  mail:
+
+    host: smtp.gmail.com
+    port: 587
+    username: benardwamache@gmail.com
+    password: mjhpxaqrhtteilyw
+
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          #connectiontimeout: 5000
+          #timeout: 3000
+          #writetimeout: 5000
+
