@@ -5,10 +5,10 @@ server:
     include-binding-errors: always
 spring:
   datasource:
-    password: b2e3902a597c0ffdce141ac94be42650c2b4984621d22425051ec4f53886a99f
-     url: postgres://ec2-52-206-182-219.compute-1.amazonaws.com:5432/dcb7g00rnbjf3r
-#    url: ec2-52-206-182-219.compute-1.amazonaws.com:5432/schoolpay
-    username: vlatuhyculvugb
+    password: 1234
+    #    url: jdbc:postgresql://localhost:5432/registration
+    url: jdbc:mysql://localhost:3307/schoolpay
+    username: root
   jpa:
     hibernate:
       ddl-auto: create-drop
