@@ -1,0 +1,8 @@
+{
+  "name": "schoolfeespayment",
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
