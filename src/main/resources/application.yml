@@ -5,10 +5,10 @@ server:
     include-binding-errors: always
 spring:
   datasource:
-    password: 1234
+    password: 3c962c5c
     #    url: jdbc:postgresql://localhost:5432/registration
-    url: jdbc:mysql://localhost:3307/schoolpay
-    username: root
+    url: jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_70a0f73b81c6223
+    username: bf18be6fdba35c
   jpa:
     hibernate:
       ddl-auto: create-drop
