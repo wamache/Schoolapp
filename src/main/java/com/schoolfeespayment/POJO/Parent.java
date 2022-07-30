@@ -61,6 +61,9 @@ public class Parent implements Serializable {
 
     @Column(name="status")
     private String status;
+
+
+
 //
 //    @Column(name = "verification_code", length = 64)
 //    private String verificationCode;

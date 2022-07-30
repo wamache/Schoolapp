@@ -53,7 +53,7 @@ public class EmailUtils {
             //helper.setText(text);
             helper.setTo(to);
             helper.setSubject(subject);
-            helper.setFrom("benardwamache@gmail.com");
+            helper.setFrom("hello@gmail.com");
             String htmlMsg = "<p><b> Your Login details</b><br><b>Email:</b>"+ to+ "<br><b>Password:</b>" +password+ "<br><a href=\"http://localhost:4200/\"> Click here to login</a></p>";
             message.setContent(htmlMsg, "text/html");
             emailSender.send(message);

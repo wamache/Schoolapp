@@ -58,12 +58,13 @@ public class ParentServiceImpl implements ParentService {
         try {
             if(validateSignUpMap(requestMap)) {
                 Parent parent = parentDao.findByEmailId(requestMap.get("email"));
-
+//                BCryptPasswordEncoder encoder= new BCryptPasswordEncoder();
+//                String encodedPassword = encoder.encode(parent.getPassword());
+//                parent.setPassword(encodedPassword);
+//
 
                 if(Objects.isNull(parent)) {
-                    BCryptPasswordEncoder encoder= new BCryptPasswordEncoder();
-                    String encodedPassword = encoder.encode(parent.getPassword());
-                    parent.setPassword(encodedPassword);
+
                     parentDao.save(getParentFromMap(requestMap));
 
                     return ParentUtils.getResponseEntity( "Successfully Registered.", HttpStatus.OK);

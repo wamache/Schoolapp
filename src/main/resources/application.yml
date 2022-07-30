@@ -1,17 +1,23 @@
+
+#  datasource:
+#    password: 3c962c5c
+#    #    url: jdbc:postgresql://localhost:5432/registration
+#    url: jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_70a0f73b81c6223
+#    username: bf18be6fdba35c
 server:
-  port: 8085
   error:
     include-message: always
     include-binding-errors: always
+
 spring:
   datasource:
-    password: 3c962c5c
+    password: 1234
     #    url: jdbc:postgresql://localhost:5432/registration
-    url: jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_70a0f73b81c6223
-    username: bf18be6fdba35c
+    url: jdbc:mysql://localhost:3307/spay
+    username: root
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -19,11 +25,10 @@ spring:
     show-sql: true
 
   mail:
-
-    host: smtp.gmail.com
-    port: 587
-    username: benardwamache@gmail.com
-    password: mjhpxaqrhtteilyw
+    host: localhost
+    port: 1025
+    username: hello
+    password: hello
 
     properties:
       mail:
@@ -33,7 +38,7 @@ spring:
           auth: true
           starttls:
             enable: true
-          #connectiontimeout: 5000
-          #timeout: 3000
-          #writetimeout: 5000
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
 

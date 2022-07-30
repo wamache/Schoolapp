@@ -18,9 +18,6 @@ public class ParentWrapper {
     private String contactNumber;
     private String status;
 
-    private String verificationCode;
-
-    private boolean enabled;
 
 //    public ParentWrapper(String verificationCode, boolean enabled) {
 //        this.verificationCode = verificationCode;
