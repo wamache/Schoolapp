@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 import java.util.Map;
 
-@RequestMapping(path="/parent")
+@RequestMapping(path="/api/parent")
 public interface ParentRest {
 
     @PostMapping(path="/signup")
