@@ -11,10 +11,14 @@ server:
 
 spring:
   datasource:
-    password: 1234
+    #password: 1234
     #    url: jdbc:postgresql://localhost:5432/registration
-    url: jdbc:mysql://localhost:3307/spay
-    username: root
+    #url: jdbc:mysql://localhost:3307/spay
+
+    #username: root
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
