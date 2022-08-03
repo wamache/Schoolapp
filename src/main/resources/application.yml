@@ -4,46 +4,46 @@
 #    #    url: jdbc:postgresql://localhost:5432/registration
 #    url: jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_70a0f73b81c6223
 #    username: bf18be6fdba35c
-server:
-  error:
-    include-message: always
-    include-binding-errors: always
+#server:
+#  error:
+#    include-message: always
+#    include-binding-errors: always
 
-spring:
-  datasource:
-    password: 1234
+#spring:
+#  datasource:
+#    password: 1234
 #    url: jdbc:postgresql://localhost:5432/registration
-    url: jdbc:mysql://localhost:3307/spay
-    username: root
+#    url: jdbc:mysql://localhost:3307/spay
+#   username: root
 #    url: jdbc:mysql://us-cdbr-east-06.cleardb.net:3306/heroku_b0e8276def02b01 #${JDBC_DATABASE_URL}
 #    username: b30e359d8b5cca #${JDBC_DATABASE_USERNAME}
 #    password: fe6c34c1 #${JDBC_DATABASE_PASSWORD}
 
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-        format_sql: true
-    show-sql: true
-
-  mail:
-    host: localhost
-    port: 1025
-    username: hello
-    password: hello
-
-    properties:
-      mail:
-        smtp:
-          ssl:
-            trust: "*"
-          auth: true
-          starttls:
-            enable: true
-          connectiontimeout: 5000
-          timeout: 3000
-          writetimeout: 5000
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#        format_sql: true
+#    show-sql: true
+#
+#  mail:
+#    host: localhost
+#    port: 1025
+#    username: hello
+#    password: hello
+#
+ #   properties:
+  #    mail:
+   #     smtp:
+    #      ssl:
+     #       trust: "*"
+      #    auth: true
+       #   starttls:
+        #    enable: true
+         # connectiontimeout: 5000
+          #timeout: 3000
+          #writetimeout: 5000
 
