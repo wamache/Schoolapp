@@ -1,6 +1,7 @@
 package com.schoolfeespayment.rest;
 
 
+import com.schoolfeespayment.POJO.Parent;
 import com.schoolfeespayment.wrapper.ParentWrapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RequestMapping(path="/api/parent")
 public interface ParentRest {

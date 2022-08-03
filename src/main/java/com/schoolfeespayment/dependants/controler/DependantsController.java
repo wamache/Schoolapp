@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RestController
-@RequestMapping(path="/api/dependants")
+@RequestMapping(path="/dashboard")
 public class DependantsController {
 	private DependantsService dependantsService;
 
@@ -21,26 +21,26 @@ public class DependantsController {
 	
 	//handler method to handle list students and return mode view
 	
-	@GetMapping("/students")
+	@GetMapping("/dependants")
 	public String listStudents(Model model) {
-		model.addAttribute("students", dependantsService.getAllDependants());
-		return "students";
+		model.addAttribute("dependants", dependantsService.getAllDependants());
+		return "dependants";
 		
 	}
 	
-	@GetMapping("/students/new")
+	@GetMapping("/dependants/new")
 	public String createStudentForm(Model model) {
 		
 		Dependants dependants=new Dependants ();
 		model.addAttribute("depentant", dependants);
-		return "create_student";
+		return "create_dependants";
 	}
 	
 	@PostMapping("/dependants")
 	public String saveStudent(@ModelAttribute("depentant") Dependants dependants) {
 
 		dependantsService.saveDependants(dependants);
-		return "redirect:/students";
+		return "redirect:/dependants";
 		
 	}
 	

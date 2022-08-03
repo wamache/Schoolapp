@@ -20,10 +20,10 @@ import java.io.IOException;
 public class JwtFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JwtUtil jwtUtil;
+    JwtUtil jwtUtil;
 
     @Autowired
-    private ParentUsersDetailsService service;
+    ParentUsersDetailsService service;
 
     Claims claims = null;
     private String userName = null;

@@ -15,7 +15,6 @@ import com.schoolfeespayment.utils.ParentUtils;
 
 import com.schoolfeespayment.wrapper.ParentWrapper;
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +22,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -56,12 +54,10 @@ public class ParentServiceImpl implements ParentService {
         log.info("Inside signup {}", requestMap);
 
         try {
+
             if(validateSignUpMap(requestMap)) {
                 Parent parent = parentDao.findByEmailId(requestMap.get("email"));
-//                BCryptPasswordEncoder encoder= new BCryptPasswordEncoder();
-//                String encodedPassword = encoder.encode(parent.getPassword());
-//                parent.setPassword(encodedPassword);
-//
+
 
                 if(Objects.isNull(parent)) {
 
@@ -84,6 +80,8 @@ public class ParentServiceImpl implements ParentService {
         }
         return ParentUtils.getResponseEntity(ParentConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+
 
 
 
@@ -116,6 +114,7 @@ public class ParentServiceImpl implements ParentService {
 
     }
 
+
     @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
         log.info("Inside login");
@@ -125,16 +124,22 @@ public class ParentServiceImpl implements ParentService {
             );
             if(auth.isAuthenticated()){
                 if(parentUsersDetailsService.getUserDetail().getStatus().equalsIgnoreCase("true")){
-                    return new ResponseEntity<String>("{\"token\":\"" +
+                     return new ResponseEntity<String>("{\"token\"\"api/dashboard/dependants\":\"" +
+
                             jwtUtil.generateToken(parentUsersDetailsService.getUserDetail().getEmail(),
                                     parentUsersDetailsService.getUserDetail().getRole()) + "\"}",
                             HttpStatus.OK);
+
                 }
                 else{
                     return new ResponseEntity<String>("{\"message\":\""+"Wait for admin approval."+"\"}",
                             HttpStatus.BAD_REQUEST);
 
+
                 }
+
+
+
             }
 
         }catch (Exception ex){
