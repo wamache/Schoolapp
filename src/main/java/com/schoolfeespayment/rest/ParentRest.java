@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@RequestMapping(path="/api/parent")
+@RequestMapping(path="/parent")
 public interface ParentRest {
 
     @PostMapping(path="/signup")

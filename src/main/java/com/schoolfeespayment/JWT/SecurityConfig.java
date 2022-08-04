@@ -20,10 +20,10 @@ import org.springframework.web.cors.CorsConfiguration;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    ParentUsersDetailsService parentUsersDetailsService;
+    private ParentUsersDetailsService parentUsersDetailsService;
 
     @Autowired
-    JwtFilter jwtFilter;
+    private  JwtFilter jwtFilter;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/parent/login", "/parent/signup", "/parent/forgotPassword")
+                .antMatchers( "/parent/signup", "/parent/login", "/parent/forgotPassword")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
